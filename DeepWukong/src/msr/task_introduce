@@ -1,0 +1,29 @@
+
+
+step 1:  python msr_PDG.py
+
+Step 2:  python  data_generator_msr.py
+
+Step 3: python  msr_graph_linevul_intersection.py
+
+Step 4: python msr_graph_linevul_intersection_last_step_visual.py
+
+
+
+Task 2: reveal token analysis
+
+Step 1: train reveal model on MSR.
+      cd data-package/models/Devign_ReVeal/code/hpc/
+       sh train_reveal_MSR.sh  MSR  1234
+
+Step 2: generate reveal token importance.
+      cd  data-package/interpretability/data_collection/Devign/scripts/
+      sh explainer_runner_MSR_slurm.sh
+
+Step 3:cd data-package/interpretability/data_collection/Devign/code/analysis_graph_explain_results/
+      python analysis_graph_explain_results.py
+
+
+Step 4: cd DeepWukong/src/msr/
+      python msr_reveal_graph_linevul_tokens_intersection_last_step_visual.py
+      python  msr_reveal_graph_linevul_intersection_calculate_two_metrics.py
